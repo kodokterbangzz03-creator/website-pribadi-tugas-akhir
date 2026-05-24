@@ -110,6 +110,13 @@ blockquote {
 
 .tm-nav-link {
   color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5rem 0;
+  display: block;
 }
 
 .tm-navbar.scroll .tm-nav-link {
@@ -121,6 +128,22 @@ blockquote {
 .tm-nav-link:hover {
   color: #FFF;
   background-color: #369;
+  padding: 0.5rem 1rem;
+}
+
+#userInfo {
+  color: white;
+  margin: 0;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.tm-navbar.scroll #userInfo {
+  color: #369;
+}
+
+#authArea button {
+  all: unset;
 }
 
 .navbar-toggler {
@@ -622,6 +645,11 @@ p {
     padding-right: 30px;
     padding-left: 30px;
   }
+
+  .navbar-expand-md .navbar-nav .tm-nav-link {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -675,6 +703,15 @@ p {
   .navbar-collapse .nav-link {
     color: #707070;
 	padding-right: 20px;
+  }
+
+  .navbar-collapse .tm-nav-link {
+    color: #707070;
+	padding-right: 20px;
+  }
+
+  #userInfo {
+    color: #707070;
   }
 }
 
