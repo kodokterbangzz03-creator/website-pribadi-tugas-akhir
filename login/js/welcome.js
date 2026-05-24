@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    function goLogin() {
+    function masuk() {
         window.location.href = "login/index.html";
     }
 
-    function logout() {
+    function keluar() {
         localStorage.removeItem("username");
         location.reload();
     }
@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("userInfo").innerText = "Halo, " + user;
 
         document.getElementById("authArea").innerHTML = `
-            <button onclick="logout()" class="nav-link tm-nav-link">Logout</button>
+            <button onclick="keluar()" class="nav-link tm-nav-link">Keluar</button>
         `;
     }
 
-    window.goLogin = goLogin;
-    window.logout = logout;
+    window.goLogin = masuk;
+    window.logout = keluar;
 
 });
