@@ -117,6 +117,7 @@ blockquote {
   font-family: inherit;
   padding: 0.5rem 0;
   display: block;
+  margin: 0;
 }
 
 .tm-navbar.scroll .tm-nav-link {
@@ -144,6 +145,26 @@ blockquote {
 
 #authArea button {
   all: unset;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5rem 0;
+  display: block;
+  margin: 0;
+}
+
+.tm-navbar.scroll #authArea button {
+  color: #369;
+}
+
+.tm-navbar.scroll #authArea button:hover,
+#authArea button:hover {
+  color: #FFF;
+  background-color: #369;
+  padding: 0.5rem 1rem;
 }
 
 .navbar-toggler {
@@ -650,6 +671,16 @@ p {
     padding-right: 30px;
     padding-left: 30px;
   }
+
+  #userInfo {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  #authArea button {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -711,6 +742,10 @@ p {
   }
 
   #userInfo {
+    color: #707070;
+  }
+
+  #authArea button {
     color: #707070;
   }
 }
