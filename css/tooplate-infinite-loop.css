@@ -769,3 +769,27 @@ p {
     margin: 0;
   }
 }
+
+/* 1. Memaksa isi container navbar agar sejajar di tengah secara vertikal */
+.navbar .container {
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* 2. Menghilangkan margin bawaan pada logo agar posisinya lurus */
+.navbar-brand {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+}
+
+/* 3. Merapikan susunan menu kanan agar lurus memanjang dan tidak menumpuk */
+.navbar-nav {
+    display: flex !important;
+    flex-direction: row !important; /* Memaksa menu berjejer ke samping */
+    align-items: center !important;    /* Menyelaraskan tinggi menu dengan logo */
+    gap: 15px;                      /* Memberi jarak antar menu agar rapi */
+}
