@@ -77,20 +77,9 @@ body {
 }
 
 .input-wrapper input::placeholder {
-    color: transparent;
+    color: #94a3b8;
 }
 
-.input-wrapper label {
-    position: absolute;
-    left: 16px;
-    top: 12px;
-    color: #64748b;
-    font-size: 16px;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-    transform-origin: left top;
-    opacity: 1;
-}
 
 .input-wrapper input:focus,
 .input-wrapper input:valid,
