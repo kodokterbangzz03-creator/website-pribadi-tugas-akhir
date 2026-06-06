@@ -18,7 +18,13 @@
                 <div class="form-group">
                     <div class="input-wrapper">
                         <label for="username">Nama Pengguna</label>
-                        <input type="text" id="username" name="username" required autocomplete="username">
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            required 
+                            autocomplete="username"
+                        >
                     </div>
                     <span class="error-message" id="usernameError"></span>
                 </div>
@@ -26,8 +32,19 @@
                 <div class="form-group">
                     <div class="input-wrapper password-wrapper">
                         <label for="password">Sandi</label>
-                        <input type="password" id="password" name="password" required autocomplete="current-password">
-                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Tampilkan/Sembunyikan sandi">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required 
+                            autocomplete="current-password"
+                        >
+                        <button 
+                            type="button" 
+                            class="password-toggle" 
+                            id="passwordToggle" 
+                            aria-label="Tampilkan/Sembunyikan sandi"
+                        >
                             <span class="eye-icon"></span>
                         </button>
                     </div>
@@ -48,9 +65,15 @@
                 <button type="submit" class="login-btn">
                     <span class="btn-text">Masuk</span>
                     <span class="btn-loader"></span>
+                    <span class="btn-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </span>
                 </button>
 
-                    <div id="alertBox" class="alert" style="display:none;"></div>
+                <div id="alertBox" class="alert" style="display:none;"></div>
             </form>
 
             <div class="signup-link">
@@ -67,8 +90,6 @@
 
     <script src="../../shared/js/form-utils.js"></script>
     <script src="script.js"></script>
-
-
     <script src="js/login.js"></script>
 </body>
 </html>
