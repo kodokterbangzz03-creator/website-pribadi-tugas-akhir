@@ -15,6 +15,67 @@
 Tooplate 2117 Infinite Loop
 https://www.tooplate.com/view/2117-infinite-loop
 -->
+    <style>
+      /* Tambahan styling untuk section media */
+      #media {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+      .media-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+      }
+      .media-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .media-item:hover {
+        transform: scale(1.05);
+      }
+      .media-item iframe,
+      .media-thumbnail {
+        width: 100%;
+        height: 300px;
+        border: none;
+      }
+      .media-thumbnail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0f0f0;
+        font-size: 60px;
+        cursor: pointer;
+        position: relative;
+      }
+      .media-thumbnail:hover::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      .media-label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+        padding: 20px;
+        font-weight: bold;
+      }
+      @media (max-width: 768px) {
+        .media-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
     <script>
       function goLogin() {
         window.location.href = "login/index.html";
@@ -52,6 +113,9 @@ https://www.tooplate.com/view/2117-infinite-loop
               </li>
               <li class="nav-item">
                   <a class="nav-link tm-nav-link" href="#gallery">Dokumentasi</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#media">Media</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link tm-nav-link" href="#contact">Kontak</a>
@@ -93,7 +157,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                     <div class="tm-intro-text-container">
                         <h2 class="tm-text-primary mb-4 tm-section-title">Kenapa kalian harus mencoba?</h2>
                         <p class="mb-4 tm-intro-text">
-                          Magelangan adalah makanan yang terdiri atas dasar mie dan nasi, seperti perpaduan antara nasi goreng dan mie goreng. Rasanya enak dan harganya<a href="https://fb.com/toop[...]
+                          Magelangan adalah makanan yang terdiri atas dasar mie dan nasi, seperti perpaduan antara nasi goreng dan mie goreng. Rasanya enak dan harganya<a href="https://fb.com/toop[...[...]
                     </div>
                 </div>
 
@@ -297,6 +361,45 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </div>                
             </div>        
           </div>
+      </div>
+    </section>
+
+    <!-- Media & Lokasi Section -->
+    <section id="media" class="tm-section-pad-top">
+      <div class="container">
+        <div class="row">
+          <div class="text-center col-12">
+              <h2 class="tm-text-primary tm-section-title mb-4">Media & Lokasi</h2>
+              <p class="mx-auto tm-section-desc">
+                Kunjungi channel YouTube kami dan lihat lokasi restoran di Google Maps
+              </p>
+          </div>            
+        </div>
+        <div class="media-container">
+          <!-- YouTube Video -->
+          <div class="media-item">
+            <a href="https://www.youtube.com/channel/YOUR_CHANNEL_ID" target="_blank" rel="noopener noreferrer">
+              <div class="media-thumbnail" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div>
+                  <i class="fab fa-youtube" style="font-size: 80px; color: white;"></i>
+                  <div class="media-label">Kunjungi Channel YouTube Kami</div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Google Maps -->
+          <div class="media-item">
+            <a href="https://maps.app.goo.gl/4rQgJDX3wie8hFy69" target="_blank" rel="noopener noreferrer">
+              <div class="media-thumbnail" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div>
+                  <i class="fas fa-map-marker-alt" style="font-size: 80px; color: white;"></i>
+                  <div class="media-label">Lihat Lokasi di Google Maps</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
