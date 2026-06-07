@@ -95,6 +95,8 @@ blockquote {
   font-size: 1.4rem;
   font-weight: bold;
   margin-right: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-brand:hover,
@@ -175,9 +177,10 @@ blockquote {
 
 .navbar-toggler {
   border: 1px solid white;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 8px 10px;
   outline: none;
+  margin-left: auto;
+  order: 2;
 }
 
 .navbar-toggler:focus {
@@ -187,7 +190,9 @@ blockquote {
 
 .navbar-toggler-icon {
   color: white;
-  padding-top: 6px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
 }
 
 .tm-navbar.scroll .navbar-toggler {
@@ -732,27 +737,43 @@ p {
 
 /* Mobile Navbar - Responsive */
 @media (max-width: 767px) {
-  .navbar {
-    padding: 0.5rem 0;
+  .tm-navbar {
+    padding: 0.75rem 0;
+  }
+
+  .navbar .container {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
   }
 
   .navbar-brand {
-    margin-right: auto;
+    order: 1;
     flex-shrink: 0;
+    margin-right: auto !important;
   }
 
   .navbar-toggler {
-    order: 3;
+    order: 2;
     flex-shrink: 0;
+    margin-left: 0 !important;
   }
 
   .navbar-collapse {
+    order: 3;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     padding: 15px;
     border-radius: 4px;
     margin-top: 10px;
-    width: 100%;
-    order: 4;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navbar-collapse.show {
+    max-height: 500px;
   }
 
   .navbar-collapse .nav-link,
@@ -789,6 +810,13 @@ p {
     background-color: #369 !important;
     color: white !important;
   }
+
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -817,29 +845,28 @@ p {
   .navbar-collapse {
     padding: 10px;
   }
-}
 
-/* Navbar Container Flex */
-.navbar .container {
-    display: flex !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-}
-
-/* Logo */
-.navbar-brand {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    display: flex;
-    align-items: center;
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
 }
 
 /* Desktop Menu - Horizontal */
-.navbar-nav {
+@media (min-width: 768px) {
+  .navbar .container {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  .navbar-nav {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     gap: 5px;
+  }
+
+  .navbar-toggler {
+    display: none !important;
+  }
 }
