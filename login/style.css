@@ -133,7 +133,7 @@ body {
 }
 
 .eye-icon.show-password {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='1.5'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21'%3e%3c/path%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='1.5'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-4.803m5.596-3.856a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z'%3e%3c/path%3e%3cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 13.5L19.6 13.4'%3e%3c/path%3e%3c/svg%3e");
 }
 
 /* Error Messages */
@@ -438,6 +438,11 @@ body {
     border-radius: 8px;
     font-size: 0.875rem;
     animation: slideDown 0.3s ease;
+    display: none;
+}
+
+#message:not(:empty) {
+    display: block;
 }
 
 #alertBox {
