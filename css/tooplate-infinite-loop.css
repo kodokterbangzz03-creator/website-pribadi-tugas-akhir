@@ -82,6 +82,7 @@ blockquote {
   z-index: 1000;
   background-color: transparent;
   transition: all 0.3s ease;
+  padding: 0.5rem 0;
 }
 
 .tm-navbar.scroll {
@@ -93,6 +94,7 @@ blockquote {
   color: white;
   font-size: 1.4rem;
   font-weight: bold;
+  margin-right: auto;
 }
 
 .navbar-brand:hover,
@@ -118,6 +120,7 @@ blockquote {
   padding: 0.5rem 0;
   display: block;
   margin: 0;
+  transition: all 0.3s ease;
 }
 
 .tm-navbar.scroll .tm-nav-link {
@@ -130,6 +133,7 @@ blockquote {
   color: #FFF;
   background-color: #369;
   padding: 0.5rem 1rem;
+  border-radius: 4px;
 }
 
 #userInfo {
@@ -137,6 +141,7 @@ blockquote {
   margin: 0;
   padding: 0.5rem 0;
   display: block;
+  font-size: 0.9rem;
 }
 
 .tm-navbar.scroll #userInfo {
@@ -151,9 +156,11 @@ blockquote {
   cursor: pointer;
   font-size: inherit;
   font-family: inherit;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   display: block;
   margin: 0;
+  transition: all 0.3s ease;
+  border-radius: 4px;
 }
 
 .tm-navbar.scroll #authArea button {
@@ -164,13 +171,18 @@ blockquote {
 #authArea button:hover {
   color: #FFF;
   background-color: #369;
-  padding: 0.5rem 1rem;
 }
 
 .navbar-toggler {
   border: 1px solid white;
   padding-left: 10px;
   padding-right: 10px;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .navbar-toggler-icon {
@@ -718,35 +730,64 @@ p {
   }
 }
 
+/* Mobile Navbar - Responsive */
 @media (max-width: 767px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
 
-  .navbar-nav {
-    max-width: 200px;
-    text-align: right;
+  .navbar-brand {
+    margin-right: auto;
+    flex-shrink: 0;
+  }
+
+  .navbar-toggler {
+    order: 3;
+    flex-shrink: 0;
   }
 
   .navbar-collapse {
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 100%;
+    order: 4;
   }
 
-  .navbar-collapse .nav-link {
-    color: #707070;
-	padding-right: 20px;
-  }
-
+  .navbar-collapse .nav-link,
   .navbar-collapse .tm-nav-link {
-    color: #707070;
-	padding-right: 20px;
+    color: #707070 !important;
+    padding: 8px 12px !important;
+    margin: 4px 0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
   }
 
-  #userInfo {
-    color: #707070;
+  .navbar-collapse .nav-link:hover,
+  .navbar-collapse .tm-nav-link:hover {
+    background-color: #369 !important;
+    color: white !important;
   }
 
-  #authArea button {
+  .navbar-collapse #userInfo {
     color: #707070;
+    padding: 8px 12px !important;
+    font-size: 0.85rem;
+  }
+
+  .navbar-collapse #authArea button {
+    color: #707070;
+    padding: 8px 12px !important;
+    width: 100%;
+    text-align: left;
+    border-radius: 4px;
+  }
+
+  .navbar-collapse #authArea button:hover {
+    background-color: #369 !important;
+    color: white !important;
   }
 }
 
@@ -768,15 +809,24 @@ p {
   .tm-gallery-item {
     margin: 0;
   }
+
+  .tm-hero-title {
+    font-size: 2rem;
+  }
+
+  .navbar-collapse {
+    padding: 10px;
+  }
 }
 
-/* 1. Memaksa isi container navbar agar sejajar di tengah secara vertikal */
+/* Navbar Container Flex */
 .navbar .container {
     display: flex !important;
     align-items: center !important;
+    flex-wrap: wrap !important;
 }
 
-/* 2. Menghilangkan margin bawaan pada logo agar posisinya lurus */
+/* Logo */
 .navbar-brand {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -786,10 +836,10 @@ p {
     align-items: center;
 }
 
-/* 3. Merapikan susunan menu kanan agar lurus memanjang dan tidak menumpuk */
+/* Desktop Menu - Horizontal */
 .navbar-nav {
     display: flex !important;
-    flex-direction: row !important; /* Memaksa menu berjejer ke samping */
-    align-items: center !important;    /* Menyelaraskan tinggi menu dengan logo */
-    gap: 15px;                      /* Memberi jarak antar menu agar rapi */
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 5px;
 }
